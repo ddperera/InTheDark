@@ -3,22 +3,12 @@ using System.Collections;
 
 public class CameraMovementPnoyola : MonoBehaviour {
 
-	public float speed = 0.001f;
-	public float turnSpeed = 2.0f;
+	public Transform obj;
+	public float speed = 1.0f;
 
-	// Use this for initialization
-	void Start () {
-	
+	void Update(){
+		Vector3 pos = new Vector3 (obj.position.x, 7f, obj.position.z - 0.5f);
+		transform.position = Vector3.Slerp (transform.position, pos, speed);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-		float moveHorizontal = Input.GetAxis ("Horizontal");
-		float moveVertical = Input.GetAxis ("Vertical");
 
-		transform.Translate (Vector3.forward * moveVertical * speed);
-		transform.Rotate (Vector3.up * moveHorizontal * turnSpeed);
-
-	}
 }
