@@ -231,6 +231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 5438902}
   speed: 5
+  flashlight: {fileID: 10855060}
 --- !u!136 &13680808
 CapsuleCollider:
   m_ObjectHideFlags: 1
