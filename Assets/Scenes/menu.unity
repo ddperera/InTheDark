@@ -209,8 +209,8 @@ RectTransform:
   m_RootOrder: 1
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -370, y: 0}
-  m_SizeDelta: {x: 200, y: 150}
+  m_AnchoredPosition: {x: -300, y: 0}
+  m_SizeDelta: {x: 300, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &255338444
 MonoBehaviour:
@@ -246,11 +246,11 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Controls
 
-    W,A,S,D to move
+    - W,A,S,D to move
 
-    Mouse to aim flashlight
+    - Mouse to aim flashlight
 
-    Mouse click to turn flashlight on and off'
+    - Mouse click to turn flashlight on and off'
 --- !u!222 &255338445
 CanvasRenderer:
   m_ObjectHideFlags: 0
