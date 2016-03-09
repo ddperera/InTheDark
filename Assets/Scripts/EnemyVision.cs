@@ -31,7 +31,6 @@ public class EnemyVision : MonoBehaviour {
 		playerLightOn = playerInfo.flashlight.enabled;
 		visionDist = playerLightOn ? visionVolume.radius : visionVolume.radius/2.0f;
 		fovAngle = playerLightOn ? 360f : 100f;
-		Debug.Log(visionDist);
 	}
 
 	void OnTriggerStay(Collider other)
@@ -57,8 +56,12 @@ public class EnemyVision : MonoBehaviour {
 					}
 				}
 			}
-
-
+			Debug.Log((gameObject.transform.position - player.transform.position).sqrMagnitude);
+			if((gameObject.transform.position - player.transform.position).sqrMagnitude < 4)
+			{
+				Debug.Log("killmepls");
+				Application.LoadLevel(0);
+			}
 		}
 	}
 
