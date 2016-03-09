@@ -39,7 +39,6 @@ public class CharacterMovement : MonoBehaviour {
     void RotateToMouse()
     {
         Vector3 v3T = Input.mousePosition;
-        Debug.Log(v3T);
         v3T.z = Mathf.Abs(Camera.main.transform.position.y - transform.position.y);
         v3T = Camera.main.ScreenToWorldPoint(v3T);
         transform.LookAt(v3T);

@@ -8,10 +8,12 @@ public class EnemyVision : MonoBehaviour {
 	public Vector3 lastSightingLoc;
 
 	private GameObject player;
+	private CharacterMovement playerInfo;
 	private SphereCollider visionVolume;
 	private NavMeshAgent nav;
 	public Vector3 resetLoc;
 	private bool playerLightOn;
+	private float visionDist;
 
 	void Awake()
 	{
@@ -19,8 +21,17 @@ public class EnemyVision : MonoBehaviour {
 
 		nav = GetComponent<NavMeshAgent> ();
 		player = GameObject.FindGameObjectWithTag ("Player");
+		playerInfo = player.GetComponent<CharacterMovement>();
 		visionVolume = GetComponent<SphereCollider> ();
 		lastSightingLoc = resetLoc;
+	}
+
+	void Update()
+	{
+		playerLightOn = playerInfo.flashlight.enabled;
+		visionDist = playerLightOn ? visionVolume.radius : visionVolume.radius/2.0f;
+		fovAngle = playerLightOn ? 360f : 100f;
+		Debug.Log(visionDist);
 	}
 
 	void OnTriggerStay(Collider other)
@@ -32,7 +43,6 @@ public class EnemyVision : MonoBehaviour {
 
 			Vector3 dir = other.transform.position - transform.position;
 			float angleToPlayer = Vector3.Angle (dir, transform.forward);
-			float visionDist = playerLightOn ? visionVolume.radius : visionVolume.radius/2.0f;
 
 			if (angleToPlayer < fovAngle * 0.5f) 
 			{
