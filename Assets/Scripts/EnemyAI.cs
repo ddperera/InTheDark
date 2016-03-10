@@ -117,6 +117,7 @@ public class EnemyAI : MonoBehaviour {
 			yield return null;
 		}
 		pointLight.intensity = 8;
+		spotLight.intensity = 8;
 		lightLerping = false;
 	}
 
@@ -131,6 +132,7 @@ public class EnemyAI : MonoBehaviour {
 			yield return null;
 		}
 		pointLight.intensity = 0;
+		spotLight.intensity = 0;
 		lightLerping = false;
 	}
 }
