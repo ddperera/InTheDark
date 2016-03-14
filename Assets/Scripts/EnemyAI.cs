@@ -50,6 +50,8 @@ public class EnemyAI : MonoBehaviour {
 			}
 		}
 
+		Debug.Log (pointLight.intensity);
+
 	}
 
 	void Chase()
