@@ -38,13 +38,13 @@ public class DoorAnimation : MonoBehaviour {
 					if (playerInventory.hasKey) {
 						anim.SetBool ("Open", true);
 						if (!audio.isPlaying) {
-							GetComponent<AudioSource> ().clip = doorSwishClip;
-							GetComponent<AudioSource> ().Play ();
+							audio.clip = doorSwishClip;
+							audio.Play ();
 						}
 					} else {
 						if (!audio.isPlaying) {
-							GetComponent<AudioSource> ().clip = doorLocked;
-							GetComponent<AudioSource> ().Play ();
+							audio.clip = doorLocked;
+							audio.Play ();
 						}
 					}
 					
@@ -52,8 +52,8 @@ public class DoorAnimation : MonoBehaviour {
 					anim.SetBool ("Open", true);
 					//anim.IsInTransition (0) && 
 					if (!audio.isPlaying) {
-						GetComponent<AudioSource>().clip = doorSwishClip;
-						GetComponent<AudioSource>().Play ();
+						audio.clip = doorSwishClip;
+						audio.Play ();
 					}
 				}
 			}
