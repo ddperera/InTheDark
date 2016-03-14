@@ -9723,7 +9723,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 122974, guid: 2638f46dbb5a1483182b735a6281097c, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 10848640, guid: 2638f46dbb5a1483182b735a6281097c, type: 2}
       propertyPath: m_RenderMode
