@@ -215,8 +215,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3b3e2eda06e55445a53a6c5987c6924, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  walkSpeed: 2
-  chaseSpeed: 4
+  walkSpeed: 3
+  chaseSpeed: 4.5
   chaseTimeout: 5
   patrolWaitTimes:
   - 10
