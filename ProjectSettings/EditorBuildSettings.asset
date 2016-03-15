@@ -9,3 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/menu.unity
   - enabled: 1
     path: Assets/Scenes/CoelhoTestEnviro.unity
+  - enabled: 1
+    path: Assets/Scenes/Pnoyola2.unity
+  - enabled: 1
+    path: Assets/Scenes/CoelhoNewLevel.unity
