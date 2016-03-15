@@ -12,11 +12,15 @@ public class DoorAnimation : MonoBehaviour {
 	private PlayerInventory playerInventory;
 	private AudioSource audio;
 
+	private TextManager textM;
+
 	void Awake(){
 		anim = GetComponent<Animator> ();
 		audio = GetComponent<AudioSource> ();
 		player = GameObject.FindGameObjectWithTag ("Player");
 		playerInventory = player.GetComponent<PlayerInventory> ();
+
+		textM = GameObject.FindGameObjectWithTag ("Text").GetComponent<TextManager> ();
 	}
 
 	void OnTriggerEnter(Collider other){
@@ -34,6 +38,7 @@ public class DoorAnimation : MonoBehaviour {
 	void Update(){
 		if (inTrigger && !anim.GetBool("Open")) {
 			if(Input.GetButton("Jump")){
+				
 				if (keyRequired) {
 					if (playerInventory.hasKey) {
 						anim.SetBool ("Open", true);
@@ -41,11 +46,12 @@ public class DoorAnimation : MonoBehaviour {
 							audio.clip = doorSwishClip;
 							audio.Play ();
 						}
-					} else {
+					} else { //player was not able to open the door
 						if (!audio.isPlaying) {
 							audio.clip = doorLocked;
 							audio.Play ();
 						}
+						textM.UpdateText ("The door is locked");
 					}
 					
 				} else {

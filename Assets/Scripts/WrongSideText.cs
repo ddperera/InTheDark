@@ -1,13 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Key : MonoBehaviour {
-	public AudioClip getKey;
+public class WrongSideText : MonoBehaviour {
 
-	private bool inTrigger = false;
-	private bool keyPicked = false;
+	public AudioClip doorLocked;
+	public bool inTrigger = false;
+
 	private GameObject player;
-	private PlayerInventory playerInventory;
 	private AudioSource audio;
 
 	private TextManager textM;
@@ -15,7 +14,6 @@ public class Key : MonoBehaviour {
 	void Awake(){
 		audio = GetComponent<AudioSource> ();
 		player = GameObject.FindGameObjectWithTag ("Player");
-		playerInventory = player.GetComponent<PlayerInventory> ();
 
 		textM = GameObject.FindGameObjectWithTag ("Text").GetComponent<TextManager> ();
 	}
@@ -33,17 +31,12 @@ public class Key : MonoBehaviour {
 	}
 
 	void Update(){
-		if (inTrigger && !keyPicked) {
-			if (Input.GetButton ("Jump")) {
-				if (!audio.isPlaying ) {
-					audio.clip = getKey;
-					audio.Play ();
-				}
-				textM.UpdateText ("You picked up a key");
-				playerInventory.hasKey = true;
-				keyPicked = true;
-				GetComponent<Transform> ().GetChild (0).gameObject.SetActive (false);
+		if (inTrigger && Input.GetButton ("Jump")) {
+			if (!audio.isPlaying) {
+				audio.clip = doorLocked;
+				audio.Play ();
 			}
+			textM.UpdateText ("The door closed from the other side");
 		}
 	}
 }
