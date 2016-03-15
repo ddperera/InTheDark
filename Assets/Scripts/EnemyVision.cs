@@ -60,7 +60,7 @@ public class EnemyVision : MonoBehaviour {
 			if((gameObject.transform.position - player.transform.position).sqrMagnitude < 4)
 			{
 				Debug.Log("killmepls");
-				Application.LoadLevel(1);
+				Application.LoadLevel(Application.loadedLevel);
 			}
 		}
 	}

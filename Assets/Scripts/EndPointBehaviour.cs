@@ -3,6 +3,8 @@ using System.Collections;
 
 public class EndPointBehaviour : MonoBehaviour {
 
+	public int nextLevelIndex;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -19,7 +21,14 @@ public class EndPointBehaviour : MonoBehaviour {
 		if(coll.gameObject.CompareTag("Player"))
 		{
 			Debug.Log("Victory!");
-			GameObject.Destroy(coll.gameObject);
+			if (nextLevelIndex == 9) 
+			{
+				GameObject.Destroy (coll.gameObject);
+			} 
+			else 
+			{
+				Application.LoadLevel (nextLevelIndex);
+			}
 		}
 
 	}
