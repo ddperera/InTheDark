@@ -55,9 +55,9 @@ GUIText:
   m_PixelOffset: {x: 0, y: 0}
   m_LineSpacing: 1
   m_TabSize: 4
-  m_Font: {fileID: 0}
+  m_Font: {fileID: 12800000, guid: 5be8e0ab7182047898bf4574a2d6c87f, type: 3}
   m_Material: {fileID: 0}
-  m_FontSize: 0
+  m_FontSize: 25
   m_FontStyle: 0
   m_Color:
     serializedVersion: 2
